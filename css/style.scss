@@ -393,7 +393,8 @@ body {
 		margin-bottom: $gap;
 	}
 	a {
-		color: transparentize($color: $color-text-main-White, $amount: 0.3);
+		// color: transparentize($color: $color-text-main-White, $amount: 0.3);
+		color: $color-text-footer;
 
 		&:hover {
 			color: $color-text-main-White;
