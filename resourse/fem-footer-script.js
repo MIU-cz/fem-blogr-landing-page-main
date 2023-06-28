@@ -10,7 +10,7 @@ const footer =
 		<ul>
 
 			<li><a href="https://mehal.my.canva.site" target="_blank" title="Business card">
-					<img src="../FEM-resourse/pics/autor.png" alt="smm-ico">
+					<img src="./resourse/pics/autor.png" alt="smm-ico">
 				</a></li>
 
 			<li><a href="https://www.facebook.com/mehaligor.cz" target="_blank" title="Facebook">
