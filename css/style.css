@@ -172,4 +172,75 @@ body {
 .header-link .btn-link:hover:last-child {
   background-color: white;
   color: hsl(356, 100%, 66%);
+}
+
+.main_container section {
+  margin-top: 60px;
+}
+.main_container section:first-child {
+  height: 800px;
+  background-image: url(../images/illustration-editor-desktop.svg);
+  background-size: contain;
+  background-position-x: 140%;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+.main_container section:last-child {
+  height: 800px;
+  background-image: url(../images/illustration-laptop-desktop.svg);
+  background-size: contain;
+  background-position-x: -65%;
+  background-repeat: no-repeat;
+  padding-top: 100px;
+}
+.main_container section:last-child .section-content {
+  margin: 100px 0 0 auto;
+}
+.main_container section:nth-child(2) {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(45deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  border-radius: 0 100px 0 100px;
+}
+.main_container section:nth-child(2) .section-img {
+  max-width: 600px;
+  position: absolute;
+  top: -18%;
+  left: 5%;
+}
+.main_container section:nth-child(2) .section-content {
+  margin: 0 0 0 auto;
+  padding-top: 10%;
+}
+.main_container section:nth-child(2) .section-content h3 {
+  color: hsl(0, 0%, 100%);
+}
+.main_container section:nth-child(2) .section-content p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.section-title h2 {
+  text-align: center;
+  color: hsl(208, 49%, 24%);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.section-content {
+  width: 600px;
+  height: 100%;
+  margin-top: 100px;
+}
+
+.content-item h3 {
+  margin-top: 40px;
+  color: hsl(208, 49%, 24%);
+  font-size: 24px;
+  font-weight: 600;
+}
+.content-item p {
+  margin-top: 40px;
+  line-height: 1.5em;
+  letter-spacing: 0.05em;
+  color: rgba(31, 63, 91, 0.8);
 }/*# sourceMappingURL=style.css.map */
