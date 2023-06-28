@@ -13,7 +13,7 @@
 // ### Primary
 $color-link-btn-red: hsl(356, 100%, 66%); // Light red (CTA text)
 $color-link-btn-hover: hsl(355, 100%, 74%); // Very light red (CTA hover background)
-$color-header: hsl(208, 49%, 24%); // Very dark blue (headings)
+$color-text-header: hsl(208, 49%, 24%); // Very dark blue (headings)
 
 // ### Neutral
 $color-text-main-White: hsl(0, 0%, 100%); // (text)
@@ -39,8 +39,13 @@ $font-Ubuntu: "Ubuntu", sans-serif; //menu, header
 // ### Fonts
 // - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
 // - Weights: 300, 600
+$font-Overpass-w300: 300;
+$font-Overpass-w600: 600;
 // - Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
 // - Weights: 400, 500, 700
+$font-Ubuntu-w400: 400;
+$font-Ubuntu-w500: 500;
+$font-Ubuntu-w700: 700;
 
 // ### variables
 $main-container-width: 1440px;
@@ -68,22 +73,28 @@ body {
 .content_container {
 	font-family: $font-Overpass;
 	font-size: $font-size-body;
-	font-weight: 300;
+	font-weight: $font-Overpass-w300;
 
 	width: 1140px;
 	margin: 0 auto;
+
+	a,
+	li {
+		font-family: $font-Ubuntu;
+		font-weight: $font-Ubuntu-w700;
+	}
 }
 
 // ========================
 // header styles
 .header {
-	height: $content-container-height;
+	height: $content-container-height - 100px;
 	background: linear-gradient(45deg, $color-headGrdnd-start, $color-headGrdnd-end);
 	border-bottom-left-radius: 100px;
 	overflow: hidden;
 }
 .header-cover {
-	padding-top: $gap * 2;
+	padding-top: $gap * 3;
 }
 .header-bg {
 	width: 100%;
@@ -91,35 +102,164 @@ body {
 	background-image: url(../images/bg-pattern-intro-desktop.svg);
 	background-position-x: 25%;
 	background-position-y: center;
-	// background-size: cover;
+	color: $color-text-main-White;
 }
+
+// ========================
+// navbar + menu
 .nav-bar {
 	width: 100%;
 	// height: $nav-height;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: center;
+	// gap: $gap;
 }
 .bar-logo {
+	margin-right: $gap * 2;
 }
+
 .bar-menu {
 }
-.menu-items {
+
+.bar-menu-items {
+	display: flex;
+	flex-wrap: nowrap;
+	gap: $gap;
 }
+
 .menu-item {
+	position: relative;
+	color: transparentize($color: $color-text-main-White, $amount: 0.3);
+
+	&::after {
+		content: url(../images/icon-arrow-light.svg);
+	}
+
+	&:hover {
+		color: $color-text-main-White;
+		text-decoration: underline;
+		cursor: pointer;
+	}
 }
 .item-drop-down {
+	position: absolute;
+	margin-top: $gap;
+	padding: $gap;
+	background-color: $color-text-main-White;
+	border-radius: 10px;
+
+	a {
+		color: $color-text-header;
+		font-weight: $font-Ubuntu-w500;
+	}
+
+	li {
+		margin-top: $gap - 5px;
+	}
+
+	// &-active active {
+	// }
 }
+
 .hiden {
+	display: none;
 }
+
 .bar-link {
+	margin: 0 0 0 auto;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: center;
+	gap: $gap;
+
+	a {
+		color: transparentize($color: $color-text-main-White, $amount: 0.3);
+
+		&:hover {
+			color: $color-text-main-White;
+			text-decoration: underline;
+		}
+	}
+
+	.btn-link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&:first-child {
+		}
+
+		&:last-child {
+			width: 135px;
+			height: 50px;
+			border-radius: 25px;
+			background-color: white;
+			text-align: center;
+			color: $color-link-btn-red;
+			text-decoration: none;
+		}
+		&:hover:last-child {
+			// border-color: $color-link-btn-hover;
+			background-color: $color-link-btn-hover;
+			color: $color-text-main-White;
+		}
+	}
 }
-.btn-link {
-}
+
+// ========================
+// header banner content
 .content-header {
+	margin-top: $gap * 5;
+	text-align: center;
 }
 .header-title {
+	h1 {
+		font-size: $font-size-h1;
+		font-weight: $font-Overpass-w600;
+	}
 }
 .header-description {
+	margin-top: $gap * 2;
+	color: transparentize($color: $color-text-main-White, $amount: 0.3);
+	font-weight: $font-Overpass-w600;
 }
 .header-link {
+	margin-top: $gap * 2.5;
+	display: flex;
+	justify-content: center;
+	gap: $gap;
+
+	.btn-link {
+		display: flex;
+		width: 135px;
+		height: 50px;
+		border: solid 1px white;
+		border-radius: 25px;
+		justify-content: center;
+		align-items: center;
+
+		&:first-child {
+			background-color: white;
+			color: $color-link-btn-red;
+		}
+
+		&:last-child {
+			color: $color-text-main-White;
+		}
+
+		&:hover:first-child {
+			border-color: $color-link-btn-hover;
+			background-color: $color-link-btn-hover;
+			color: $color-text-main-White;
+		}
+
+		&:hover:last-child {
+			background-color: white;
+			color: $color-link-btn-red;
+		}
+	}
 }
 
 // ========================
