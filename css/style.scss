@@ -299,7 +299,7 @@ body {
 			height: $content-container-height - 200px;
 			background: linear-gradient(45deg, $color-mainGrdnd-start, $color-mainGrdnd-end);
 			border-radius: 0 100px 0 100px;
-			overflow: hidden;
+			// overflow: hidden;
 
 			.section-img {
 				max-width: $content-width;
@@ -363,17 +363,45 @@ body {
 // ========================
 // footer styles
 .footer {
+	margin-top: $gap * 5;
+	background-color: $color-footer-bg;
+	border-top-right-radius: 100px;
 }
 
 .footer-nav-bar {
+	display: grid;
+	grid-auto-flow: column;
+	padding: $gap * 3 0;
 }
 .footer-item {
+	width: $footer-item-width;
 }
+
 .footer-logo {
 }
+
 .footer-item-title {
+	h4 {
+		color: $color-text-main-White;
+		font-family: $font-Ubuntu;
+		font-weight: $font-Ubuntu-w700;
+		margin-bottom: $gap * 2;
+	}
 }
+
 .footer-item-nav {
+	li {
+		margin-bottom: $gap;
+	}
+	a {
+		color: transparentize($color: $color-text-main-White, $amount: 0.3);
+
+		&:hover {
+			color: $color-text-main-White;
+			text-decoration: underline;
+		}
+	}
 }
+
 .autor {
 }
