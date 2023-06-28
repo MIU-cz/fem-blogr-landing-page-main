@@ -201,6 +201,7 @@ body {
   height: 400px;
   background: linear-gradient(45deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
   border-radius: 0 100px 0 100px;
+  overflow: hidden;
 }
 .main_container section:nth-child(2) .section-img {
   max-width: 600px;
@@ -217,6 +218,12 @@ body {
 }
 .main_container section:nth-child(2) .section-content p {
   color: rgba(255, 255, 255, 0.8);
+}
+.main_container section:nth-child(2) .section-bg {
+  height: 100%;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: -55% 85%;
 }
 
 .section-title h2 {
