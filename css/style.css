@@ -283,4 +283,8 @@ body {
 .footer-item-nav a:hover {
   color: hsl(0, 0%, 100%);
   text-decoration: underline;
+}
+
+.autor {
+  color: white;
 }/*# sourceMappingURL=style.css.map */
