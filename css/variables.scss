@@ -1,0 +1,57 @@
+// # Front-end Style Guide
+
+// ## Layout
+// The designs were created to the following widths:
+// - Mobile: 375px
+// - Desktop: 1440px
+
+// ## Colors
+// ### Primary
+$color-link-btn-red: hsl(356, 100%, 66%); // Light red (CTA text)
+$color-link-btn-hover: hsl(355, 100%, 74%); // Very light red (CTA hover background)
+$color-text-header: hsl(208, 49%, 24%); // Very dark blue (headings)
+
+// ### Neutral
+$color-text-main-White: hsl(0, 0%, 100%); // (text)
+$color-text-footer: hsl(240, 2%, 79%); // Grayish blue (footer text)
+$color-section-bg: hsl(207, 13%, 34%); // Very dark grayish blue (body copy)
+$color-footer-bg: hsl(240, 10%, 16%); // Very dark black blue (footer background)
+
+// ### Gradient
+// Background gradient - Intro/CTA mobile nav:
+$color-headGrdnd-start: hsl(13, 100%, 72%); // Very light red
+$color-headGrdnd-end: hsl(353, 100%, 62%); // Light red
+
+// Background gradient - body:
+$color-mainGrdnd-start: hsl(237, 17%, 21%); // Very dark gray blue
+$color-mainGrdnd-end: hsl(237, 23%, 32%); // Very dark desaturated blue
+
+// ## Typography
+// ### Body Copy
+$font-size-body: 16px;
+$font-Overpass: "Overpass", sans-serif; //body, description
+$font-Ubuntu: "Ubuntu", sans-serif; //menu, header
+
+// ### Fonts
+// - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
+// - Weights: 300, 600
+$font-Overpass-w300: 300;
+$font-Overpass-w600: 600;
+// - Family: [Ubuntu](https://fonts.google.com/specimen/Ubuntu?preview.text_type=custom)
+// - Weights: 400, 500, 700
+$font-Ubuntu-w400: 400;
+$font-Ubuntu-w500: 500;
+$font-Ubuntu-w700: 700;
+
+// ### variables
+$main-container-width: 1440px;
+$content-container-width: 1140px;
+$content-container-height: 600px;
+$content-width: 600px;
+$nav-height: 100px;
+$footer-height: 360px;
+$footer-item-width: 280px;
+$gap: 20px;
+$font-size-h1: 46px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
