@@ -77,22 +77,28 @@ body li {
 .nav-bar .bar-menu .bar-menu-items {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 30px;
 }
 .nav-bar .bar-menu .bar-menu-items .menu-item {
   position: relative;
+  height: 100%;
   color: rgba(255, 255, 255, 0.7);
-}
-.nav-bar .bar-menu .bar-menu-items .menu-item::after {
-  content: url(../images/icon-arrow-light.svg);
 }
 .nav-bar .bar-menu .bar-menu-items .menu-item:hover {
   color: hsl(0, 0%, 100%);
   text-decoration: underline;
   cursor: pointer;
 }
+.nav-bar .bar-menu .bar-menu-items .menu-item .item-cover {
+  padding-top: 20px;
+}
+@media (min-width:992px) {
+  .nav-bar .bar-menu .bar-menu-items .menu-item .item-cover {
+    position: absolute;
+  }
+}
 .nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down {
-  margin-top: 20px;
+  width: 100%;
   padding: 20px;
   background-color: hsl(0, 0%, 100%);
   border-radius: 10px;
@@ -101,13 +107,12 @@ body li {
   color: hsl(208, 49%, 24%);
   font-weight: 500;
 }
+.nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down a:hover {
+  font-weight: 700;
+  text-decoration: underline;
+}
 .nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down li {
   margin-top: 15px;
-}
-@media (min-width:992px) {
-  .nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down {
-    position: absolute;
-  }
 }
 
 .buttons-links {
