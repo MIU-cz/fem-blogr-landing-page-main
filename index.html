@@ -15,8 +15,8 @@
 	<!-- ================= -->
 	<!-- header -->
 	<header class="main_container header">
-		<div class="header-cover header-bg">
-			<div class="content_container">
+		<div class="header-cover header-cover-bg">
+			<div class="main_content_container">
 
 				<div class="nav-bar">
 					<!-- logo -->
@@ -62,7 +62,7 @@
 					</div>
 
 					<!-- links -->
-					<div class="bar-link">
+					<div class="bar-link buttons-links">
 						<a class="btn-link" href="">Login</a>
 						<a class="btn-link" href="">Sign Up</a>
 					</div>
@@ -78,7 +78,7 @@
 						<p>Grow your audience and build your online brand</p>
 					</div>
 
-					<div class="header-link">
+					<div class="header-link buttons-links">
 						<a class="btn-link" href="">Start for Free</a>
 						<a class="btn-link" href="">Learn More</a>
 					</div>
@@ -93,13 +93,22 @@
 	<main class="main_container">
 
 		<!-- section - "editor" -->
-		<section>
-			<div class="content_container">
-				<div class="section-title">
-					<h2>Designed for the future</h2>
+		<section class="main_content_container">
+			<div class="section-title">
+				<h2>Designed for the future</h2>
+			</div>
+			<!-- section content -->
+			<div class="section-container">
+				<div class="content-item-img">
+					<picture>
+						<source media="(min-width: 1200px)" srcset="images/illustration-editor-desktop.svg"
+							type="image/svg">
+						<source media="(min-width: 375px)" srcset="images/illustration-editor-mobile.svg"
+							type="image/svg">
+						<img src="images/illustration-editor-desktop.svg" alt="illustration-editor-mobile">
+					</picture>
 				</div>
 
-				<!-- section content -->
 				<div class="section-content">
 					<div class="content-item">
 						<h3>Introducing an extensible editor</h3>
@@ -122,30 +131,41 @@
 		</section>
 
 		<!-- section - mobile -->
-		<section>
-			<div class="section-cover section-bg">
-				<div class="content_container">
-					<div class="section-img">
-						<img src="images/illustration-phones.svg" alt="illustration-phones">
-					</div>
-					<div class="section-content">
-						<div class="content-item">
-							<h3>State of the Art Infrastructure</h3>
-							<p>With reliability and speed in mind, worldwide data centers provide the backbone for
-								ultra-fast connectivity. This ensures your site will load instantly, no matter where
-								your
-								readers are, keeping your site competitive.
-							</p>
-						</div>
+		<section class="main_content_container">
+			<div class="section-container">
+				<div class="content-item-img">
+					<img src="images/illustration-phones.svg" alt="illustration-phones">
+				</div>
+				<div class="section-content">
+					<div class="content-item">
+						<h3>State of the Art Infrastructure</h3>
+						<p>With reliability and speed in mind, worldwide data centers provide the backbone for
+							ultra-fast connectivity. This ensures your site will load instantly, no matter where
+							your
+							readers are, keeping your site competitive.
+						</p>
 					</div>
 				</div>
+			</div>
+
+			<div class="section-cover">
+				<div class="section-cover-bg-img"></div>
 			</div>
 
 		</section>
 
 		<!-- section - laptop -->
-		<section>
-			<div class="content_container">
+		<section class="main_content_container">
+			<div class="section-container">
+				<div class="content-item-img">
+					<picture>
+						<source media="(min-width: 1200px)" srcset="images/illustration-laptop-desktop.svg"
+							type="image/svg">
+						<source media="(min-width: 375px)" srcset="images/illustration-laptop-mobile.svg"
+							type="image/svg">
+						<img src="images/illustration-laptop-desktop.svg" alt="illustration-editor-mobile">
+					</picture>
+				</div>
 				<div class="section-content">
 					<div class="content-item">
 						<h3>Free, open, simple</h3>
