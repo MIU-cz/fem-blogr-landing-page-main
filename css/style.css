@@ -92,7 +92,6 @@ body li {
   cursor: pointer;
 }
 .nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down {
-  position: absolute;
   margin-top: 20px;
   padding: 20px;
   background-color: hsl(0, 0%, 100%);
@@ -105,9 +104,10 @@ body li {
 .nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down li {
   margin-top: 15px;
 }
-
-.hiden {
-  display: none;
+@media (min-width:992px) {
+  .nav-bar .bar-menu .bar-menu-items .menu-item .item-drop-down {
+    position: absolute;
+  }
 }
 
 .buttons-links {
@@ -146,6 +146,33 @@ body li {
   text-decoration: underline;
 }
 
+.hiden {
+  display: none;
+}
+
+@media (min-width:768px) {
+  .scroll-top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    height: 100px;
+    padding: 0 60px;
+    transition: all 0.5s;
+  }
+  .scroll-top::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100px;
+    background-color: hsl(13, 100%, 72%);
+    border-radius: 0 0 25px 25px;
+  }
+}
 .content-header {
   margin-top: 100px;
   text-align: center;
