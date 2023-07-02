@@ -70,69 +70,17 @@ $screen-mobile375: "min-width:375px";
 // ========================
 // main styles
 body {
-	width: 100%;
-	@media (max-width: 374px) {
-		display: none;
-	}
-
-	font-family: $font-Overpass;
-	font-size: $font-size-body;
-	font-weight: $font-Overpass-w300;
-	line-height: 1.5em;
-
-	a,
-	li {
-		font-family: $font-Ubuntu;
-		font-weight: $font-Ubuntu-w700;
-	}
 }
 
-.main_container {
-	width: 100%;
-	overflow: hidden;
-
-	@media ($screen-desctop1200) {
-		width: 1440px;
-		margin: 0 auto;
-	}
-}
-
-.main_content_container {
-	width: 100%;
-
-	@media ($screen-desctop1200) {
-		width: 1140px;
-		margin: 0 auto;
-	}
-}
+// !!! - add new style for this !!!
 
 // ========================
 // header styles
-.header {
-	background: linear-gradient(45deg, $color-headGrdnd-start, $color-headGrdnd-end);
-	border-bottom-left-radius: 100px;
-	overflow: hidden;
 
-	.header-cover {
-		width: 100%;
-		height: 100%;
-		color: $color-text-main-White;
-		padding: $gap * 3 $gap + 10px $gap * 5;
+// !!! - add new style for this !!!
 
-		&-bg {
-			background-image: url(../images/bg-pattern-intro-mobile.svg);
-			background-position-x: center;
-			background-position-y: 40%;
-
-			@media ($screen-desctop1200) {
-				background-image: url(../images/bg-pattern-intro-desktop.svg);
-				background-position-x: 25%;
-				background-position-y: center;
-			}
-		}
-	}
-}
-
+//  !!!
+// re-style this items !!!
 .buttons-links {
 	display: flex;
 	flex-direction: row;
@@ -160,117 +108,6 @@ body {
 	}
 }
 
-// ========================
-// navbar + menu
-.nav-bar {
-	width: 100%;
-	display: flex;
-	flex-direction: row;
-	justify-content: left;
-	align-items: center;
-}
-
-.bar-logo {
-	margin-right: $gap * 2;
-}
-
-.bar-menu {
-	width: 95%;
-	padding: $gap * 2 $gap;
-
-	position: absolute;
-	top: $nav-height;
-	z-index: 1000;
-
-	left: 50%;
-	transform: translate(-50%);
-
-	display: flex;
-	flex-direction: column;
-
-	align-items: center;
-	justify-content: space-between;
-	gap: $gap * 3;
-
-	background-color: white;
-	border-radius: 10px;
-	box-shadow: 0 10px 20px $color-text-footer;
-
-	.bar-menu-items {
-		display: flex;
-		flex-direction: column;
-		gap: $gap * 1.5;
-	}
-
-	@media ($screen-min992) {
-		flex-direction: row;
-		position: relative;
-		top: auto;
-		background: none;
-		border: none;
-		box-shadow: none;
-
-		.bar-menu-items {
-			flex-direction: row;
-		}
-	}
-}
-
-.menu-item {
-	position: relative;
-	height: 100%;
-	color: $color-text-header;
-
-	@media ($screen-min992) {
-		color: transparentize($color: $color-text-main-White, $amount: 0.3);
-	}
-
-	&:after {
-		content: url(../images/icon-arrow-dark.svg);
-		position: absolute;
-		margin-left: $gap - 15px;
-	}
-
-	&:hover {
-		// color: $color-text-main-White;
-		text-decoration: underline;
-		cursor: pointer;
-
-		&::after {
-			transform: rotate(-90deg);
-		}
-	}
-
-	.item-cover {
-		padding-top: $gap;
-
-		@media ($screen-min992) {
-			position: absolute;
-		}
-	}
-
-	.item-drop-down {
-		width: 100%;
-		padding: $gap;
-		background-color: $color-text-main-White;
-		border-radius: 10px;
-
-		a {
-			color: $color-text-header;
-			font-weight: $font-Ubuntu-w500;
-
-			&:hover {
-				font-weight: $font-Ubuntu-w700;
-				text-decoration: underline;
-			}
-		}
-
-		li {
-			margin-top: $gap - 5px;
-		}
-	}
-}
-
 .bar-link {
 	// margin: 0 0 0 auto;
 
@@ -286,64 +123,6 @@ body {
 				text-decoration: underline;
 			}
 		}
-	}
-}
-
-// ========================
-// navbar + menu -> scripts
-.hiden {
-	display: none;
-}
-
-@media ($screen-min768) {
-	.scroll-top {
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 1000;
-		// max-width: $content-container-width;
-		width: 100%;
-		height: $nav-height;
-		padding: 0 $gap * 3;
-
-		transition: all 0.5s;
-
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			left: 0;
-			z-index: -1;
-			width: 100%;
-			height: $nav-height;
-			background-color: $color-headGrdnd-start;
-			border-radius: 0 0 25px 25px;
-		}
-	}
-}
-
-// ========================
-// header banner content
-.content-header {
-	margin-top: $gap * 5;
-	text-align: center;
-
-	.header-title {
-		h1 {
-			font-size: 5vw;
-			font-weight: $font-Overpass-w600;
-
-			@media ($screen-desctop1200) {
-				font-size: $font-size-h1;
-			}
-		}
-	}
-
-	.header-description {
-		margin-top: $gap * 2;
-		color: transparentize($color: $color-text-main-White, $amount: 0.3);
-		font-weight: $font-Overpass-w600;
-		font-size: 3vw;
 	}
 }
 
@@ -370,194 +149,50 @@ body {
 }
 
 // ========================
+// navbar + menu
+
+// !!! - add new style for this !!!
+
+// ========================
+// navbar + menu -> scripts
+.hiden {
+	// display: none;
+}
+@media ($screen-min768) {
+	// .scroll-top {
+	// 	position: fixed;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: 1000;
+	// 	width: 100%;
+	// 	height: $nav-height;
+	// 	padding: 0 $gap * 3;
+
+	// 	transition: all 0.5s;
+
+	// 	&::after {
+	// 		content: "";
+	// 		display: block;
+	// 		position: absolute;
+	// 		left: 0;
+	// 		z-index: -1;
+	// 		width: 100%;
+	// 		height: $nav-height;
+	// 		background-color: $color-headGrdnd-start;
+	// 		border-radius: 0 0 25px 25px;
+	// 	}
+	// }
+}
+
+// ========================
+// header banner content
+
+// !!! - add new style for this !!!
+
+// ========================
 // main section styles
-section {
-	position: relative;
 
-	h2,
-	h3 {
-		color: $color-text-header;
-	}
-	p {
-		color: transparentize($color: $color-text-header, $amount: 0.2);
-		letter-spacing: 0.05em;
-	}
-
-	&:last-child {
-		@media ($screen-min992) {
-			.section-container {
-				flex-direction: row;
-			}
-		}
-
-		@media ($screen-desctop1200) {
-			.content-item-img {
-				img {
-					top: -10%;
-					left: -35%;
-				}
-			}
-		}
-	}
-
-	&:nth-child(2) {
-		width: 100%;
-		height: 100%;
-
-		h3 {
-			color: $color-text-main-White;
-		}
-		p {
-			color: transparentize($color: $color-text-main-White, $amount: 0.2);
-			padding-bottom: $gap * 2;
-		}
-
-		.section-container {
-			.section-content {
-				.content-item {
-					margin-top: $gap;
-				}
-			}
-		}
-
-		.section-cover {
-			width: 100%;
-			height: 80%;
-
-			position: absolute;
-			bottom: 0;
-			z-index: -100;
-			border-radius: 0 100px 0 100px;
-			overflow: hidden;
-
-			background: linear-gradient(45deg, $color-mainGrdnd-start, $color-mainGrdnd-end);
-
-			.section-cover-bg-img {
-				height: 100%;
-				background-image: url(../images/bg-pattern-circles.svg);
-				background-repeat: no-repeat;
-				background-position-x: center;
-				background-position-y: bottom;
-			}
-		}
-
-		@media ($screen-min992) {
-			.section-container {
-				flex-direction: row;
-
-				.content-item-img {
-					width: auto;
-				}
-
-				.section-content {
-					.content-item {
-						margin: 0;
-
-						p {
-							padding-bottom: 0;
-						}
-					}
-				}
-			}
-
-			.section-cover {
-				height: 50%;
-				bottom: 50%;
-				transform: translateY(50%);
-				.section-cover-bg-img {
-					background-position-x: -50%;
-					background-position-y: 80%;
-				}
-			}
-		}
-
-		@media ($screen-desctop1200) {
-			.content-item-img {
-				img {
-					position: inherit;
-				}
-			}
-		}
-	}
-}
-
-.section-title {
-	margin-top: $gap * 5;
-	width: 100%;
-	text-align: center;
-
-	h2 {
-		font-size: $font-size-h2;
-		font-weight: $font-Overpass-w600;
-	}
-}
-
-.section-container {
-	margin-top: $gap * 2;
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-
-	.content-item-img {
-		width: 100%;
-		height: 100%;
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: center;
-		}
-	}
-
-	.section-content {
-		width: 100%;
-		text-align: center;
-	}
-	.content-item {
-		margin: $gap * 2 0;
-		padding: 0 $gap * 2;
-
-		h3 {
-			font-size: $font-size-h3;
-			font-weight: $font-Overpass-w600;
-		}
-
-		p {
-			margin-top: $gap;
-		}
-	}
-
-	@media ($screen-min992) {
-		flex-direction: row-reverse;
-
-		.section-content {
-			width: 50%;
-			text-align: left;
-		}
-
-		.content-item-img {
-			width: 50%;
-		}
-	}
-
-	@media ($screen-desctop1200) {
-		.content-item-img {
-			width: 50%;
-			min-height: $content-container-height;
-
-			img {
-				width: auto;
-				height: auto;
-				position: absolute;
-				top: -10%;
-				right: -35%;
-			}
-		}
-	}
-}
+// !!! - add new style for this !!!
 
 // ========================
 // footer styles
