@@ -67,6 +67,7 @@ $nav-height: 100px;
 $footer-height: 360px;
 $header-item-width: 300px;
 $footer-item-width: 280px;
+$btn-width: 135px;
 $gap: 20px;
 
 $screen-desctop1200: "min-width:1200px";
@@ -177,10 +178,14 @@ body {
 		align-items: center;
 		justify-content: center;
 
-		width: 135px;
+		width: $btn-width * 1.15;
 		height: 50px;
 		border-radius: 25px;
 		text-decoration: none;
+
+		@media ($screen-min992) {
+			width: $btn-width;
+		}
 	}
 }
 
@@ -450,7 +455,7 @@ body {
 // header banner content
 // ========================
 .header__content {
-	padding: $gap * 5 $gap * 3;
+	padding: $gap * 5 0;
 	text-align: center;
 
 	.header__title {

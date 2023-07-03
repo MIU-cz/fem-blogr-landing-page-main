@@ -86,10 +86,15 @@ body a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 135px;
+  width: 155.25px;
   height: 50px;
   border-radius: 25px;
   text-decoration: none;
+}
+@media (min-width:992px) {
+  .link_buttons .link_btn_item {
+    width: 135px;
+  }
 }
 
 .header__navBar {
@@ -302,7 +307,7 @@ body a:hover {
   }
 }
 .header__content {
-  padding: 100px 60px;
+  padding: 100px 0;
   text-align: center;
 }
 .header__content .header__title h1 {
