@@ -12,13 +12,13 @@
 </head>
 
 <body>
-	<!-- ================= -->
 	<!-- header -->
-	<header class="main__container header" id="top">
+	<!-- ================= -->
+	<header class="container header" id="top">
 		<div class="header-cover header-cover-bg">
 			<div class="container__content">
 
-				<div class="header__navBar">
+				<div class="header__navBar " id="headerNavbar">
 
 					<!-- logo -->
 					<div class="navBar__logo">
@@ -28,59 +28,68 @@
 					</div>
 
 					<!-- Bar menu -->
-					<div class="navBar__bar">
+					<div class="container__navBar" id="navbarMenu">
+						<div class="container__navBar_cover">
+							<!-- menu -->
+							<ul class="navBar__menu">
 
-						<!-- menu -->
-						<ul class="navBar__bar_menu">
+								<li class="navBar__menu_item">
+									<h4>Product</h4>
+									<div class="menu_item_dropdown hidden_item">
+										<ul class="item_dropdoun_cover">
+											<li><a href="">Overview</a></li>
+											<li><a href="">Pricing</a></li>
+											<li><a href="">Marketplace</a></li>
+											<li><a href="">Features</a></li>
+											<li><a href="">Integrations</a></li>
+										</ul>
+									</div>
+								</li>
 
-							<li class="bar_menu_item">Product
-								<div class="menu_item-cover hiden">
-									<ul class="menu_item-dropdown ">
-										<li><a href="">Overview</a></li>
-										<li><a href="">Pricing</a></li>
-										<li><a href="">Marketplace</a></li>
-										<li><a href="">Features</a></li>
-										<li><a href="">Integrations</a></li>
-									</ul>
-								</div>
-							</li>
+								<li class="navBar__menu_item">
+									<h4>Company</h4>
+									<div class="menu_item_dropdown hidden_item">
+										<ul class="item_dropdoun_cover">
+											<li><a href="">About</a></li>
+											<li><a href="">Team</a></li>
+											<li><a href="">Blog</a></li>
+											<li><a href="">Careers</a></li>
+										</ul>
+									</div>
 
-							<li class="bar_menu_item">Company
-								<div class="menu_item-cover hiden">
-									<ul class="menu_item-dropdown ">
-										<li><a href="">About</a></li>
-										<li><a href="">Team</a></li>
-										<li><a href="">Blog</a></li>
-										<li><a href="">Careers</a></li>
-									</ul>
-								</div>
+								</li>
 
-							</li>
+								<li class="navBar__menu_item">
+									<h4>Connect</h4>
+									<div class="menu_item_dropdown hidden_item">
+										<ul class="item_dropdoun_cover">
+											<li><a href="">Contact</a></li>
+											<li><a href="">Newsletter</a></li>
+											<li><a href="">LinkedIn</a></li>
+										</ul>
+									</div>
 
-							<li class="bar_menu_item">Connect
-								<div class="menu_item-cover hiden">
-									<ul class="menu_item-dropdown ">
-										<li><a href="">Contact</a></li>
-										<li><a href="">Newsletter</a></li>
-										<li><a href="">LinkedIn</a></li>
-									</ul>
-								</div>
+								</li>
+							</ul>
 
-							</li>
-						</ul>
-
-						<!-- links -->
-						<div class="navBar__bar_linksBtn link_buttons">
-							<a class="link_btn_item" href="">Login</a>
-							<a class="link_btn_item" href="">Sign Up</a>
+							<!-- links -->
+							<div class="navBar__linksBtn link_buttons">
+								<a class="link_btn_item" href="">Login</a>
+								<a class="link_btn_item" href="">Sign Up</a>
+							</div>
 						</div>
+
 					</div>
 
+					<!-- Burger button -->
+					<div class="btn_burger burger_hidden" id="btnBurger">
+						<!-- <img src="images/icon-hamburger.svg"> -->
+					</div>
 
 				</div>
 
 				<!-- main header content -->
-				<div class="content-header">
+				<div class="header__content">
 					<div class="header__title">
 						<h1>A modern publishing platform</h1>
 					</div>
@@ -99,8 +108,8 @@
 
 	</header>
 
-	<!-- ================= -->
 	<!-- main section -->
+	<!-- ================= -->
 	<main class="main_container">
 
 		<!-- section - "editor" -->
@@ -197,9 +206,9 @@
 		</section>
 	</main>
 
-	<!-- ================= -->
 	<!-- footer -->
-	<footer class="main__container footer">
+	<!-- ================= -->
+	<footer class="container footer">
 		<div class="container__content">
 
 			<div class="footer__navBar">
@@ -255,6 +264,7 @@
 	</footer>
 
 	<!-- scripts -->
+	<!-- ================= -->
 	<script src="resourse/fem-footer-script.js"></script>
 	<!-- <script src="js/script-menu.js"></script> -->
 </body>

@@ -3,11 +3,13 @@
 @import "../resourse/fem-footer-style.css";
 
 // # Front-end Style Guide
+// ========================
 
 // ## Layout
 // The designs were created to the following widths:
 // - Mobile: 375px
 // - Desktop: 1440px
+// ========================
 
 // ## Colors
 // ### Primary
@@ -31,6 +33,7 @@ $color-mainGrdnd-start: hsl(237, 17%, 21%); // Very dark gray blue
 $color-mainGrdnd-end: hsl(237, 23%, 32%); // Very dark desaturated blue
 
 // ## Typography
+// ========================
 // ### Body Copy
 $font-size-body: 16px;
 $font-size-h1: 46px;
@@ -41,6 +44,7 @@ $font-Overpass: "Overpass", sans-serif; //body, description
 $font-Ubuntu: "Ubuntu", sans-serif; //menu, header
 
 // ### Fonts
+// ========================
 // - Family: [Overpass](https://fonts.google.com/specimen/Overpass?preview.text_type=custom)
 // - Weights: 300, 600
 $font-Overpass-w300: 300;
@@ -52,12 +56,14 @@ $font-Ubuntu-w500: 500;
 $font-Ubuntu-w700: 700;
 
 // ### variables
+// ========================
 $main-container-width: 1440px;
 $content-container-width: 1140px;
 $content-container-height: 600px;
 $content-width: 600px;
 $nav-height: 100px;
 $footer-height: 360px;
+$header-item-width: 300px;
 $footer-item-width: 280px;
 $gap: 20px;
 
@@ -67,24 +73,35 @@ $screen-min768: "min-width:768px";
 $screen-min576: "min-width:576px";
 $screen-mobile375: "min-width:375px";
 
-// ========================
 // main styles
+// ========================
+:root {
+}
+
 body {
 	width: 100%;
+	transition: all 0.3s;
 
 	font-family: $font-Overpass;
 	font-size: $font-size-body;
 	font-weight: $font-Overpass-w300;
 	line-height: 1.5em;
+	letter-spacing: 0.07rem;
 
 	h1,
 	h2,
 	h3,
 	h4,
 	a,
+	li,
 	*-item {
 		font-family: $font-Ubuntu;
 		font-weight: $font-Ubuntu-w700;
+		color: $color-text-header;
+	}
+
+	a:hover {
+		text-decoration: underline;
 	}
 
 	// because at FM task - min screen 375px !!
@@ -94,11 +111,12 @@ body {
 			color: red;
 			font-weight: $font-Overpass-w600;
 			font-size: 5rem;
+			line-height: 1.5em;
 		}
 	}
 }
 
-.main__container {
+.container {
 	max-width: $main-container-width;
 	margin: 0 auto;
 
@@ -108,133 +126,381 @@ body {
 	}
 
 	.container__content {
+		width: 100%;
 		max-width: $content-container-width;
 		margin: 0 auto;
 	}
 }
 
-// ========================
 // header styles
+// ========================
+.header {
+	width: 100%;
+	height: auto;
+	background: linear-gradient(to right top, $color-headGrdnd-start, $color-headGrdnd-end);
+	border-radius: 0 0 0 100px;
+	overflow: hidden;
+}
 
-// !!! - add new style for this !!!
+.header-cover {
+	padding: 0 $gap;
 
-//  !!!
-// re-style this items !!!
-.buttons-links {
+	&-bg {
+		width: 100%;
+		height: 100%;
+
+		background-image: url(../images/bg-pattern-intro-mobile.svg);
+		background-position: center;
+		background-repeat: no-repeat;
+		// background-size: cover;
+
+		@media ($screen-desctop1200) {
+			background-image: url(../images/bg-pattern-intro-desktop.svg);
+			background-position-y: center;
+			background-position-x: 25%;
+		}
+	}
+}
+
+//  link_buttons main style
+// ========================
+.link_buttons {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	gap: $gap;
 
-	.btn-link {
+	.link_btn_item {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
 		width: 135px;
 		height: 50px;
-
 		border-radius: 25px;
-		background-color: white;
-
-		color: $color-link-btn-red;
 		text-decoration: none;
-
-		&:hover {
-			background-color: $color-link-btn-hover;
-			color: $color-text-main-White;
-		}
 	}
 }
 
-.bar-link {
-	// margin: 0 0 0 auto;
+// %flex-direction {
+// 	display: flex;
+// 	gap: $gap;
+// }
 
-	.btn-link {
-		&:first-child {
-			color: transparentize($color: $color-text-main-White, $amount: 0.3);
-			background: none;
-			width: auto;
-			padding: 0 $gap;
+.header__navBar {
+	// @extend %flex-direction;
+	display: flex;
+	gap: $gap;
+
+	flex-direction: row;
+	height: $nav-height;
+	align-items: center;
+}
+
+.navBar__logo {
+	// z-index: 1000;
+}
+
+// navbar - menu
+// ========================
+.container__navBar {
+	position: absolute;
+	width: 100%;
+	top: $nav-height;
+	left: 0;
+	padding: 0 $gap;
+
+	@media ($screen-min992) {
+		position: relative;
+		top: 0;
+		padding: 0;
+	}
+}
+
+.container__navBar_cover {
+	width: 100%;
+	border-radius: 10px;
+
+	display: flex;
+	flex-direction: column;
+	gap: $gap;
+	align-items: center;
+
+	background-color: white;
+	box-shadow: 0 10px 20px $color-section-bg;
+
+	padding-bottom: $gap;
+
+	@media ($screen-min992) {
+		position: relative;
+		top: 0;
+
+		flex-direction: row;
+		justify-content: space-between;
+
+		background-color: inherit;
+		box-shadow: none;
+
+		padding: 0;
+	}
+}
+
+//  menu bar
+// ========================
+.navBar__menu {
+	// @extend %flex-direction;
+	display: flex;
+	gap: $gap;
+	width: 100%;
+	padding: $gap;
+
+	flex-direction: column;
+	justify-content: center;
+
+	@media ($screen-min992) {
+		flex-direction: row;
+		width: auto;
+	}
+}
+
+.navBar__menu_item {
+	position: relative;
+
+	h4 {
+		&::after {
+			display: inline-block;
+			content: url(../images/icon-arrow-dark.svg);
+			margin-left: $gap - 15px;
+		}
+
+		&:hover {
+			text-decoration: underline;
+			cursor: pointer;
+
+			&::after {
+				transform: rotate(-90deg);
+			}
+		}
+
+		@media ($screen-min992) {
+			color: transparentize($color: $color-text-main-White, $amount: 0.2);
+
+			&::after {
+				content: url(../images/icon-arrow-light.svg);
+			}
 
 			&:hover {
 				color: $color-text-main-White;
-				text-decoration: underline;
+				// text-decoration: underline;
+				// cursor: pointer;
+
+				&::after {
+					transform: rotate(-90deg);
+				}
 			}
 		}
 	}
 }
 
-.header-link {
-	margin-top: $gap * 2.5;
-	justify-content: center;
+.menu_item_dropdown {
+	position: relative;
+	padding-top: $gap;
 
-	.btn-link {
+	@media ($screen-min992) {
+		position: absolute;
+	}
+}
+
+.item_dropdoun_cover {
+	width: 100%;
+	padding: $gap;
+	border-radius: 5px;
+	background-color: transparentize($color: $color-mainGrdnd-end, $amount: 0.8);
+
+	li {
+		margin-top: $gap;
+
+		// &:hover {
+		// 	background-color: transparentize($color: $color-mainGrdnd-end, $amount: 0.9);
+		// }
+	}
+
+	@media ($screen-min992) {
+		background-color: white;
+	}
+}
+
+// navbar links --> restyle
+// ========================
+.navBar__linksBtn {
+	// margin: 0 0 0 auto;
+	flex-direction: column;
+	gap: 0;
+
+	width: 95%;
+	border-top: solid 1px transparentize($color: $color-mainGrdnd-end, $amount: 0.8);
+	margin-top: $gap;
+
+	.link_btn_item {
+		&:first-child {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		&:last-child {
+			color: $color-text-main-White;
+			background: linear-gradient(to right, $color-headGrdnd-start, $color-headGrdnd-end);
+
+			&:hover {
+				color: $color-link-btn-red;
+				background: linear-gradient(to right, $color-headGrdnd-start, $color-link-btn-hover);
+			}
+		}
+	}
+
+	@media ($screen-min992) {
+		flex-direction: row;
+		gap: $gap;
+
+		width: auto;
+		border: none;
+		margin: 0;
+
+		.link_btn_item {
+			&:first-child {
+				color: transparentize($color: $color-text-main-White, $amount: 0.3);
+				background: none;
+				width: auto;
+				padding: 0 $gap;
+
+				&:hover {
+					color: $color-text-main-White;
+					text-decoration: underline;
+				}
+			}
+
+			&:last-child {
+				color: $color-link-btn-red;
+				background: none;
+				background-color: white;
+
+				&:hover {
+					color: $color-text-main-White;
+					background-color: $color-link-btn-hover;
+				}
+			}
+		}
+	}
+}
+
+// navbar - menu -> scripts
+// ========================
+.hidden_item {
+	display: none;
+}
+.burger_hidden {
+	@media ($screen-min992) {
+		display: none;
+	}
+}
+.btn_burger {
+	margin: 0 0 0 auto;
+	width: 32px;
+	height: 32px;
+	background-image: url(../images/icon-hamburger.svg);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+@media ($screen-min768) {
+	.scroll-top {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 1000;
+
+		width: 100%;
+		height: $nav-height;
+		padding: 0 $gap * 3;
+
+		transition: all 0.5s;
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			left: 0;
+			z-index: -1;
+			width: 100%;
+			height: $nav-height;
+			background-color: $color-headGrdnd-start;
+			border-radius: 0 0 25px 25px;
+		}
+	}
+}
+
+// header banner content
+// ========================
+.header__content {
+	padding: $gap * 5 $gap * 3;
+	text-align: center;
+
+	.header__title {
+		h1 {
+			color: $color-text-main-White;
+			font-size: $font-size-h1;
+			font-weight: $font-Ubuntu-w500;
+		}
+	}
+	.header__description {
+		padding-top: $gap * 2;
+		p {
+			color: transparentize($color: $color-text-main-White, $amount: 0.2);
+			font-weight: $font-Overpass-w600;
+		}
+	}
+}
+
+// header banner links --> restyle
+// ========================
+.header__linksBtn {
+	justify-content: center;
+	padding-top: $gap * 3;
+
+	.link_btn_item {
 		border: solid 2px white;
 
-		&:first-child:hover {
-			border-color: $color-link-btn-hover;
+		&:first-child {
+			color: $color-link-btn-red;
+			background-color: white;
+
+			&:hover {
+				color: $color-text-main-White;
+				background-color: $color-link-btn-hover;
+			}
 		}
 
 		&:last-child {
 			color: $color-text-main-White;
 			background-color: $color-link-btn-hover;
+
 			&:hover {
-				background-color: white;
 				color: $color-link-btn-red;
+				background-color: white;
 			}
 		}
 	}
 }
 
-// ========================
-// navbar + menu
-
-// !!! - add new style for this !!!
-
-// ========================
-// navbar + menu -> scripts
-.hiden {
-	// display: none;
-}
-@media ($screen-min768) {
-	// .scroll-top {
-	// 	position: fixed;
-	// 	top: 0;
-	// 	left: 0;
-	// 	z-index: 1000;
-	// 	width: 100%;
-	// 	height: $nav-height;
-	// 	padding: 0 $gap * 3;
-
-	// 	transition: all 0.5s;
-
-	// 	&::after {
-	// 		content: "";
-	// 		display: block;
-	// 		position: absolute;
-	// 		left: 0;
-	// 		z-index: -1;
-	// 		width: 100%;
-	// 		height: $nav-height;
-	// 		background-color: $color-headGrdnd-start;
-	// 		border-radius: 0 0 25px 25px;
-	// 	}
-	// }
-}
-
-// ========================
-// header banner content
-
-// !!! - add new style for this !!!
-
-// ========================
 // main section styles
+// ========================
 
 // !!! - add new style for this !!!
 
-// ========================
 // footer styles
+// ========================
 .footer {
 	margin-top: $gap * 5;
 	background-color: $color-footer-bg;
