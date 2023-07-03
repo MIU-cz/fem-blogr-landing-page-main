@@ -36,7 +36,9 @@ $color-mainGrdnd-end: hsl(237, 23%, 32%); // Very dark desaturated blue
 // ========================
 // ### Body Copy
 $font-size-body: 16px;
+// $font-size-body: 1.5vw;
 $font-size-h1: 46px;
+// $font-size-h1: 3.5vw;
 $font-size-h2: 32px;
 $font-size-h3: 24px;
 
@@ -85,7 +87,7 @@ body {
 	font-family: $font-Overpass;
 	font-size: $font-size-body;
 	font-weight: $font-Overpass-w300;
-	line-height: 1.5em;
+	line-height: 1.5;
 	letter-spacing: 0.07rem;
 
 	h1,
@@ -206,7 +208,7 @@ body {
 .container__navBar {
 	position: absolute;
 	width: 100%;
-	top: $nav-height;
+	top: -100%;
 	left: 0;
 	padding: 0 $gap;
 
@@ -214,6 +216,10 @@ body {
 		position: relative;
 		top: 0;
 		padding: 0;
+	}
+
+	&-active {
+		top: $nav-height;
 	}
 }
 
