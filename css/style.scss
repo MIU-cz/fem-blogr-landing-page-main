@@ -70,17 +70,48 @@ $screen-mobile375: "min-width:375px";
 // ========================
 // main styles
 body {
+	width: 100%;
+
+	font-family: $font-Overpass;
+	font-size: $font-size-body;
+	font-weight: $font-Overpass-w300;
+	line-height: 1.5em;
+
+	h1,
+	h2,
+	h3,
+	h4,
+	a,
+	*-item {
+		font-family: $font-Ubuntu;
+		font-weight: $font-Ubuntu-w700;
+	}
+
+	// because at FM task - min screen 375px !!
+	@media (max-width: 374px) {
+		&::before {
+			content: "you must to change your devise !)) 😉";
+			color: red;
+			font-weight: $font-Overpass-w600;
+			font-size: 5rem;
+		}
+	}
 }
 
 .main__container {
 	max-width: $main-container-width;
 	margin: 0 auto;
+
+	// because at FM task - min screen 375px !!
+	@media (max-width: 374px) {
+		display: none;
+	}
+
+	.container__content {
+		max-width: $content-container-width;
+		margin: 0 auto;
+	}
 }
-.container__content {
-	max-width: $content-container-width;
-	margin: 0 auto;
-}
-// !!! - add new style for this !!!
 
 // ========================
 // header styles
@@ -234,8 +265,6 @@ body {
 			.navBar_item-title {
 				h4 {
 					color: $color-text-main-White;
-					font-family: $font-Ubuntu;
-					font-weight: $font-Ubuntu-w700;
 					margin-bottom: $gap * 2;
 				}
 			}
