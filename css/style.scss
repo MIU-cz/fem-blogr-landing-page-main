@@ -72,6 +72,14 @@ $screen-mobile375: "min-width:375px";
 body {
 }
 
+.main__container {
+	max-width: $main-container-width;
+	margin: 0 auto;
+}
+.container__content {
+	max-width: $content-container-width;
+	margin: 0 auto;
+}
 // !!! - add new style for this !!!
 
 // ========================
@@ -201,7 +209,7 @@ body {
 	background-color: $color-footer-bg;
 	border-top-right-radius: 100px;
 
-	.footer-nav-bar {
+	.footer__navBar {
 		display: grid;
 		grid-auto-flow: row;
 		padding: $gap * 3 0;
@@ -212,18 +220,18 @@ body {
 			justify-content: space-evenly;
 		}
 
-		.footer-item {
+		// .navBar_logo {
+		// }
+
+		.footer__navBar_item {
 			width: auto;
-			margin-top: $gap * 3;
+			padding-top: $gap * 3;
 
 			@media ($screen-desctop1200) {
 				width: $footer-item-width;
 			}
 
-			// .footer-logo {
-			// }
-
-			.footer-item-title {
+			.navBar_item-title {
 				h4 {
 					color: $color-text-main-White;
 					font-family: $font-Ubuntu;
@@ -232,7 +240,7 @@ body {
 				}
 			}
 
-			.footer-item-nav {
+			.navBar_item-navLinks {
 				li {
 					margin-bottom: $gap;
 				}

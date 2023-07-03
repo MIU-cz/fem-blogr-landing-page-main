@@ -1,6 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap");
 @import "../resourse/normaliz-style-min.css";
 @import "../resourse/fem-footer-style.css";
+.main__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container__content {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
 .buttons-links {
   display: flex;
   flex-direction: row;
@@ -58,40 +68,40 @@
   background-color: hsl(240, 10%, 16%);
   border-top-right-radius: 100px;
 }
-.footer .footer-nav-bar {
+.footer .footer__navBar {
   display: grid;
   grid-auto-flow: row;
   padding: 60px 0;
   justify-content: center;
 }
 @media (min-width:576px) {
-  .footer .footer-nav-bar {
+  .footer .footer__navBar {
     grid-auto-flow: column;
     justify-content: space-evenly;
   }
 }
-.footer .footer-nav-bar .footer-item {
+.footer .footer__navBar .footer__navBar_item {
   width: auto;
-  margin-top: 60px;
+  padding-top: 60px;
 }
 @media (min-width:1200px) {
-  .footer .footer-nav-bar .footer-item {
+  .footer .footer__navBar .footer__navBar_item {
     width: 280px;
   }
 }
-.footer .footer-nav-bar .footer-item .footer-item-title h4 {
+.footer .footer__navBar .footer__navBar_item .navBar_item-title h4 {
   color: hsl(0, 0%, 100%);
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   margin-bottom: 40px;
 }
-.footer .footer-nav-bar .footer-item .footer-item-nav li {
+.footer .footer__navBar .footer__navBar_item .navBar_item-navLinks li {
   margin-bottom: 20px;
 }
-.footer .footer-nav-bar .footer-item .footer-item-nav a {
+.footer .footer__navBar .footer__navBar_item .navBar_item-navLinks a {
   color: hsl(240, 2%, 79%);
 }
-.footer .footer-nav-bar .footer-item .footer-item-nav a:hover {
+.footer .footer__navBar .footer__navBar_item .navBar_item-navLinks a:hover {
   color: hsl(0, 0%, 100%);
   text-decoration: underline;
 }
