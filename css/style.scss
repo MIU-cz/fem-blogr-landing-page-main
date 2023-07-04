@@ -79,11 +79,11 @@ $screen-mobile375: "min-width:375px";
 // main styles
 // ========================
 :root {
+	transition: all 0.5s;
 }
 
 body {
 	width: 100%;
-	transition: all 0.3s;
 
 	font-family: $font-Overpass;
 	font-size: $font-size-body;
@@ -194,6 +194,7 @@ body {
 // 	gap: $gap;
 // }
 
+// id="headerNavbar"
 .header__navBar {
 	// @extend %flex-direction;
 	display: flex;
@@ -210,21 +211,27 @@ body {
 
 // navbar - menu
 // ========================
+// id="navbarMenu"
 .container__navBar {
 	position: absolute;
 	width: 100%;
+	height: 80%;
 	top: -100%;
 	left: 0;
 	padding: 0 $gap;
+	overflow: auto;
 
 	@media ($screen-min992) {
 		position: relative;
+		height: auto;
 		top: 0;
 		padding: 0;
+		overflow: inherit;
 	}
 
 	&-active {
 		top: $nav-height;
+		position: fixed;
 	}
 }
 
@@ -243,9 +250,6 @@ body {
 	padding-bottom: $gap;
 
 	@media ($screen-min992) {
-		position: relative;
-		top: 0;
-
 		flex-direction: row;
 		justify-content: space-between;
 
@@ -256,7 +260,7 @@ body {
 	}
 }
 
-//  menu bar
+//  menu bar items
 // ========================
 .navBar__menu {
 	// @extend %flex-direction;
@@ -302,12 +306,6 @@ body {
 
 			&:hover {
 				color: $color-text-main-White;
-				// text-decoration: underline;
-				// cursor: pointer;
-
-				&::after {
-					transform: rotate(-90deg);
-				}
 			}
 		}
 	}
@@ -407,14 +405,18 @@ body {
 
 // navbar - menu -> scripts
 // ========================
+.scroll_view {
+	&-lock {
+		overflow: hidden;
+	}
+}
+
+// class="menu_item_dropdown hidden_item"
 .hidden_item {
 	display: none;
 }
-.burger_hidden {
-	@media ($screen-min992) {
-		display: none;
-	}
-}
+
+// id="btnBurger"
 .btn_burger {
 	margin: 0 0 0 auto;
 	width: 32px;
@@ -423,8 +425,18 @@ body {
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+	background-color: inherit;
+
+	&-active {
+		background-image: url(../images/icon-close.svg);
+	}
+
+	@media ($screen-min992) {
+		display: none;
+	}
 }
 
+// id="headerNavbar"
 @media ($screen-min768) {
 	.scroll-top {
 		position: fixed;
@@ -446,7 +458,8 @@ body {
 			z-index: -1;
 			width: 100%;
 			height: $nav-height;
-			background-color: $color-headGrdnd-start;
+			// background-color: $color-headGrdnd-start;
+			background: linear-gradient(to right top, $color-headGrdnd-start, $color-headGrdnd-end);
 			border-radius: 0 0 25px 25px;
 		}
 	}
