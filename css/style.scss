@@ -61,6 +61,11 @@ $font-Ubuntu-w700: 700;
 // ========================
 $main-container-width: 1440px;
 $content-container-width: 1140px;
+// @media (min-width: 1650px) {
+// 	$main-container-width: 100%;
+// 	$content-container-width: 100%;
+// }
+
 $content-container-height: 600px;
 $content-width: 600px;
 $nav-height: 100px;
@@ -93,7 +98,11 @@ body {
 
 	h1,
 	h2,
-	h3,
+	h3 {
+		font-weight: $font-Overpass-w600;
+		color: $color-text-header;
+	}
+
 	h4,
 	a,
 	li,
@@ -135,6 +144,18 @@ body {
 	}
 }
 
+// @media (min-width: 1650px) {
+// 	.container {
+// 		width: 100%;
+// 		max-width: inherit;
+
+// 		.container__content {
+// 			width: 100%;
+// 			max-width: inherit;
+// 		}
+// 	}
+// }
+
 // header styles
 // ========================
 .header {
@@ -153,14 +174,15 @@ body {
 		height: 100%;
 
 		background-image: url(../images/bg-pattern-intro-mobile.svg);
-		background-position: center;
 		background-repeat: no-repeat;
 		// background-size: cover;
+		background-position-x: 35%;
+		background-position-y: 35%;
 
 		@media ($screen-desctop1200) {
 			background-image: url(../images/bg-pattern-intro-desktop.svg);
-			background-position-y: center;
 			background-position-x: 25%;
+			background-position-y: center;
 		}
 	}
 }
@@ -205,9 +227,9 @@ body {
 	align-items: center;
 }
 
-.navBar__logo {
-	// z-index: 1000;
-}
+// .navBar__logo {
+// 	// z-index: 1000;
+// }
 
 // navbar - menu
 // ========================
@@ -475,7 +497,6 @@ body {
 		h1 {
 			color: $color-text-main-White;
 			font-size: $font-size-h1;
-			font-weight: $font-Ubuntu-w500;
 		}
 	}
 	.header__description {
@@ -521,7 +542,7 @@ body {
 // main section styles
 // ========================
 
-// !!! - add new style for this !!!
+// !!! write new styles here !!!!
 
 // footer styles
 // ========================
@@ -581,3 +602,19 @@ body {
 .autor {
 	color: $color-text-footer;
 }
+
+// @media (min-width: 1650px) {
+// 	h1,
+// 	h2,
+// 	h3,
+// 	h4,
+// 	p,
+// 	li,
+// 	a {
+// 		font-size: 1.5vw !important;
+// 	}
+
+// 	.link_btn_item {
+// 		width: auto !important;
+// 	}
+// }

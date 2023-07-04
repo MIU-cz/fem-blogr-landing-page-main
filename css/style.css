@@ -16,7 +16,10 @@ body {
 }
 body h1,
 body h2,
-body h3,
+body h3 {
+  font-weight: 600;
+  color: hsl(208, 49%, 24%);
+}
 body h4,
 body a,
 body li,
@@ -68,14 +71,15 @@ body a:hover {
   width: 100%;
   height: 100%;
   background-image: url(../images/bg-pattern-intro-mobile.svg);
-  background-position: center;
   background-repeat: no-repeat;
+  background-position-x: 35%;
+  background-position-y: 35%;
 }
 @media (min-width:1200px) {
   .header-cover-bg {
     background-image: url(../images/bg-pattern-intro-desktop.svg);
-    background-position-y: center;
     background-position-x: 25%;
+    background-position-y: center;
   }
 }
 
@@ -323,7 +327,6 @@ body a:hover {
 .header__content .header__title h1 {
   color: hsl(0, 0%, 100%);
   font-size: 46px;
-  font-weight: 500;
 }
 .header__content .header__description {
   padding-top: 40px;
