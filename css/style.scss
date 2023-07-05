@@ -427,6 +427,7 @@ body {
 	}
 }
 
+// ========================
 // navbar - menu -> scripts
 // ========================
 .scroll_view {
@@ -629,7 +630,73 @@ main.container {
 		}
 	}
 }
-// !!! write new styles here !!!!
+
+// section aside
+// ========================
+.container__aside {
+	position: relative;
+	width: 100%;
+
+	@media (max-width: 991px) {
+		margin: $gap * 3 auto;
+	}
+
+	.container__section_row {
+		gap: 0;
+	}
+
+	.section_column {
+		align-items: center;
+		width: 100%;
+
+		img {
+			width: 100%;
+		}
+
+		@media (max-width: 991px) {
+			&:last-child {
+				padding-bottom: $gap * 5;
+			}
+		}
+	}
+
+	.column__item {
+		h3 {
+			color: $color-text-main-White;
+		}
+		p {
+			color: transparentize($color: $color-text-main-White, $amount: 0.2);
+			line-height: 1.5em;
+		}
+	}
+}
+
+.aside__cover {
+	position: absolute;
+	bottom: 0;
+	z-index: -100;
+
+	width: 100%;
+	height: 75%;
+
+	background: linear-gradient(to right, $color-mainGrdnd-start, $color-mainGrdnd-end);
+	border-radius: 0 100px 0 100px;
+	overflow: hidden;
+
+	.aside__cover_picture {
+		width: 100%;
+		height: 100%;
+		background-image: url(../images/bg-pattern-circles.svg);
+		background-repeat: no-repeat;
+		background-position: -200px -550px;
+	}
+
+	@media ($screen-min992) {
+		height: 60%;
+		bottom: 15%;
+		transform: translateY(-15%);
+	}
+}
 
 // footer styles
 // ========================

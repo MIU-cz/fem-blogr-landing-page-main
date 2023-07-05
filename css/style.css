@@ -446,6 +446,63 @@ main.container {
   }
 }
 
+.container__aside {
+  position: relative;
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .container__aside {
+    margin: 60px auto;
+  }
+}
+.container__aside .container__section_row {
+  gap: 0;
+}
+.container__aside .section_column {
+  align-items: center;
+  width: 100%;
+}
+.container__aside .section_column img {
+  width: 100%;
+}
+@media (max-width: 991px) {
+  .container__aside .section_column:last-child {
+    padding-bottom: 100px;
+  }
+}
+.container__aside .column__item h3 {
+  color: hsl(0, 0%, 100%);
+}
+.container__aside .column__item p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5em;
+}
+
+.aside__cover {
+  position: absolute;
+  bottom: 0;
+  z-index: -100;
+  width: 100%;
+  height: 75%;
+  background: linear-gradient(to right, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
+  border-radius: 0 100px 0 100px;
+  overflow: hidden;
+}
+.aside__cover .aside__cover_picture {
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/bg-pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-position: -200px -550px;
+}
+@media (min-width:992px) {
+  .aside__cover {
+    height: 60%;
+    bottom: 15%;
+    transform: translateY(-15%);
+  }
+}
+
 .footer {
   margin-top: 100px;
   background-color: hsl(240, 10%, 16%);
