@@ -61,6 +61,7 @@ $font-Ubuntu-w700: 700;
 // ========================
 $main-container-width: 1440px;
 $content-container-width: 1140px;
+
 // @media (min-width: 1650px) {
 // 	$main-container-width: 100%;
 // 	$content-container-width: 100%;
@@ -138,7 +139,6 @@ body {
 	}
 
 	.container__content {
-		width: 100%;
 		max-width: $content-container-width;
 		margin: 0 auto;
 	}
@@ -358,6 +358,8 @@ body {
 
 	@media ($screen-min992) {
 		background-color: white;
+		// width: $header-item-width;
+		padding-right: $gap * 2;
 	}
 }
 
@@ -541,7 +543,92 @@ body {
 
 // main section styles
 // ========================
+main.container {
+	overflow: hidden;
+	padding-top: $gap * 2;
+}
 
+.container__section {
+	@media ($screen-min992) {
+		position: relative;
+		&:first-child {
+			.container__section_row {
+				flex-direction: row-reverse;
+			}
+		}
+		&:last-child {
+			img {
+				transform: translateX(-430px);
+			}
+		}
+	}
+}
+
+.section__title {
+	width: 100%;
+	text-align: center;
+	font-size: $font-size-h2;
+
+	@media ($screen-min992) {
+		position: absolute;
+		top: $nav-height;
+	}
+}
+
+.container__section_row {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: $gap;
+	text-align: center;
+
+	@media ($screen-min992) {
+		flex-direction: row;
+		justify-content: center;
+		text-align: left;
+	}
+}
+.section_column {
+	display: flex;
+	flex-direction: column;
+
+	@media ($screen-min992) {
+		width: 50%;
+	}
+}
+.column__item {
+	padding: $gap;
+	h3 {
+		font-size: $font-size-h3;
+	}
+	p {
+		margin-top: $gap;
+		color: transparentize($color: $color-text-header, $amount: 0.2);
+		line-height: 1.5em;
+	}
+}
+
+.item__image {
+	.item__image_mobile {
+		display: block;
+	}
+	.item__image_desctop {
+		display: none;
+	}
+	img {
+		object-fit: contain;
+	}
+
+	@media ($screen-min992) {
+		.item__image_mobile {
+			display: none;
+		}
+		.item__image_desctop {
+			display: block;
+		}
+	}
+}
 // !!! write new styles here !!!!
 
 // footer styles
