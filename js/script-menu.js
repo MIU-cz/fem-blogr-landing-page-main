@@ -1,7 +1,8 @@
 const Header = document.querySelector(".header");
-const NavBar = document.querySelector(".nav-bar");
-const BarMenu = document.querySelector(".bar-menu-items");
-const MenuItem = document.querySelectorAll(".menu-item");
+const NavBar = document.querySelector("#headerNavbar");
+const BarMenu = document.querySelector("#navbarMenu");
+const MenuItem = document.querySelectorAll(".navBar__menu_item");
+const BurgerBtn = document.querySelector("#btnBurger");
 
 // =======================
 // # menu - scroll top
@@ -17,16 +18,16 @@ document.addEventListener('scroll', function (event) {
 
 // =======================
 // # menu - show drop-doun menu
-MenuItem.forEach(itemClicked => {
-    itemClicked.addEventListener('click', function (event) {
-        let item = event.target;
-        item.firstElementChild.classList.toggle('hiden');
+// MenuItem.forEach(itemClicked => {
+//     itemClicked.addEventListener('click', function (event) {
+//         let item = event.target;
+//         item.firstElementChild.classList.toggle('hiden');
 
-        // item.addEventListener('mouseleave', function (event) {
-        //     this.firstElementChild.classList.add('hiden');
-        // })
-    })
-});
+//         // item.addEventListener('mouseleave', function (event) {
+//         //     this.firstElementChild.classList.add('hiden');
+//         // })
+//     })
+// });
 
 // =======================
 // # menu - burger menu
