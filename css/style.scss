@@ -360,6 +360,7 @@ body {
 		background-color: white;
 		// width: $header-item-width;
 		padding-right: $gap * 2;
+		box-shadow: 0 5px 5px 5px transparentize($color: $color-section-bg, $amount: 0.8);
 	}
 }
 

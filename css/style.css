@@ -220,6 +220,7 @@ body a:hover {
   .item_dropdoun_cover {
     background-color: white;
     padding-right: 40px;
+    box-shadow: 0 5px 5px 5px rgba(75, 88, 98, 0.2);
   }
 }
 
