@@ -1,12 +1,3 @@
-
-
-const BarMenu = document.querySelector("#navbarMenu"); //menu to display/hidden
-const BurgerBtn = document.querySelector("#btnBurger"); //burger button
-
-
-
-// console.log(MenuItem);
-
 // =======================
 // # menu - scroll top
 const Header = document.querySelector(".header"); //header section for heights calculate
@@ -42,7 +33,7 @@ function mouseMenu(item) {
     })
 };
 
-function accordionMenu() {
+function accordionMenu(item) {
     item.classList.toggle('hidden_item');
 };
 
@@ -59,22 +50,14 @@ MenuItem.forEach(menuClicked => {
 });
 
 
-
-
-
-
-
-
-
-
 // =======================
 // # menu - burger menu
-// let burgerBtn = document.getElementsByClassName("burger-menu")[0];
-// let bodyTag = document.getElementsByTagName("body")[0];
-// let navBar = document.getElementsByClassName("navbar_menu_top")[0];
+const BarMenu = document.querySelector("#navbarMenu"); //menu to display/hidden
+const BurgerBtn = document.querySelector("#btnBurger"); //burger button
+const BodyTag = document.getElementsByTagName("body")[0];
 
-// burgerBtn.addEventListener('click', function () {
-//     burgerBtn.classList.toggle("active-btn");
-//     bodyTag.classList.toggle("body-overflow");
-//     navBar.classList.toggle("active-btn");
-// })
+BurgerBtn.addEventListener('click', function () {
+    BurgerBtn.classList.toggle("btn_burger-active");
+    BodyTag.classList.toggle("scroll_view-lock");
+    BarMenu.classList.toggle("container__navBar-active");
+})
