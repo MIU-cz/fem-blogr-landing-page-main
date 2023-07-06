@@ -1,11 +1,17 @@
-const Header = document.querySelector(".header");
-const NavBar = document.querySelector("#headerNavbar");
-const BarMenu = document.querySelector("#navbarMenu");
-const MenuItem = document.querySelectorAll(".navBar__menu_item");
-const BurgerBtn = document.querySelector("#btnBurger");
+
+
+const BarMenu = document.querySelector("#navbarMenu"); //menu to display/hidden
+const BurgerBtn = document.querySelector("#btnBurger"); //burger button
+
+
+
+// console.log(MenuItem);
 
 // =======================
 // # menu - scroll top
+const Header = document.querySelector(".header"); //header section for heights calculate
+const NavBar = document.querySelector("#headerNavbar"); //bar section ror scroll
+
 document.addEventListener('scroll', function (event) {
     if (Header.offsetHeight < window.scrollY) {
         NavBar.classList.add('scroll-top');
@@ -18,16 +24,48 @@ document.addEventListener('scroll', function (event) {
 
 // =======================
 // # menu - show drop-doun menu
-// MenuItem.forEach(itemClicked => {
-//     itemClicked.addEventListener('click', function (event) {
-//         let item = event.target;
-//         item.firstElementChild.classList.toggle('hiden');
+const MenuItem = document.querySelectorAll(".navBar__menu_item"); //menu btn on click
+const DropDounItems = document.querySelectorAll(".menu_item_dropdown"); //hidden items 
 
-//         // item.addEventListener('mouseleave', function (event) {
-//         //     this.firstElementChild.classList.add('hiden');
-//         // })
-//     })
-// });
+function hideMenu() {
+    DropDounItems.forEach(function (item) {
+        item.classList.add('hidden_item');
+    })
+}
+
+function mouseMenu(item) {
+    hideMenu();
+    item.classList.remove('hidden_item');
+
+    item.addEventListener('mouseleave', function (e) {
+        item.classList.add('hidden_item');
+    })
+};
+
+function accordionMenu() {
+    item.classList.toggle('hidden_item');
+};
+
+MenuItem.forEach(menuClicked => {
+    menuClicked.addEventListener('click', function (event) {
+        let clickedItem = event.currentTarget;
+        let dropMenuItem = clickedItem.querySelector(".menu_item_dropdown");
+        let screenWidth = window.innerWidth;
+
+        if (screenWidth < 992) { accordionMenu(dropMenuItem); }
+        else { mouseMenu(dropMenuItem); }
+
+    })
+});
+
+
+
+
+
+
+
+
+
 
 // =======================
 // # menu - burger menu
